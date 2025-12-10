@@ -13,12 +13,14 @@
       --text-muted: #b3b3c2;
     }
 
+    /* MOBILE-FIRST BASE STYLES */
+
     body {
       margin: 0;
       background: var(--bg);
       font-family: system-ui, sans-serif;
       color: var(--text-main);
-      padding: 32px 16px;
+      padding: 16px;
       display: flex;
       justify-content: center;
     }
@@ -29,40 +31,36 @@
       background: #0c0c17;
       border-radius: 28px;
       border: 1px solid rgba(255,255,255,0.08);
-      padding: 32px;
+      padding: 20px;
       box-shadow: 0 40px 120px rgba(0,0,0,0.9);
       display: flex;
-      flex-direction: row;
-      gap: 32px;
-      align-items: flex-start;
+      flex-direction: column;  /* poster on top, then cards */
+      gap: 20px;
       box-sizing: border-box;
     }
 
-    /* LEFT POSTER – DESKTOP (unchanged, perfect) */
+    /* POSTER — MOBILE: simple full-width card, no extra height */
     .poster-shell {
-      flex: 0 0 45%;
-      border-radius: 22px;
+      width: 100%;
+      border-radius: 18px;
       overflow: hidden;
       border: 1px solid rgba(255,255,255,0.12);
       background: #000;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      position: sticky;
-      top: 32px;
-      height: calc(100vh - 64px);
+      display: block;
+      position: relative;
+      top: auto;
+      height: auto; /* no forced height */
     }
 
     .poster-shell img {
       width: 100%;
-      height: 100%;
-      object-fit: contain; /* always show full poster on desktop */
+      height: auto;
       display: block;
-      background: #000;
+      object-fit: cover;  /* same feel as other cards */
     }
 
-    /* RIGHT GRID OF ARTISTS */
+    /* ARTIST GRID */
+
     .artist-panel {
       flex: 1;
       display: flex;
@@ -104,13 +102,14 @@
       transition: 0.25s ease;
     }
 
+    /* banner position – tuned for mobile first */
     .banner-overlay {
       position: absolute;
-      bottom: -70px;
+      bottom: -30px;  /* not too low so it won’t be cropped */
       left: 50%;
       transform: translateX(-50%);
       width: 90%;
-      height: 55%;
+      height: 50%;
       pointer-events: none;
     }
 
@@ -121,47 +120,40 @@
       transition: 0.25s ease;
     }
 
-    /* RESPONSIVE – MOBILE / TABLET */
-    @media (max-width: 900px) {
+    /* -------- DESKTOP / LARGE SCREENS -------- */
+    @media (min-width: 900px) {
       body {
-        padding: 16px;
+        padding: 32px;
       }
 
       .frame {
-        flex-direction: column;
-        padding: 20px;
-        gap: 20px;
+        flex-direction: row;   /* poster left, cards right */
+        padding: 32px;
+        gap: 32px;
+        align-items: flex-start;
       }
 
-      /* On mobile: poster behaves like a normal card, no sticky, no big borders */
       .poster-shell {
-        position: relative;
-        top: auto;
-        height: auto;
-        width: 100%;
-        display: block;               /* remove flex centering */
-        border-radius: 18px;          /* match artist cards */
-        overflow: hidden;
+        flex: 0 0 45%;
+        border-radius: 22px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: sticky;
+        top: 32px;
+        height: calc(100vh - 64px);  /* fill viewport height on desktop */
       }
 
       .poster-shell img {
         width: 100%;
-        height: auto;
-        display: block;
-        object-fit: cover;            /* same feel as other cards */
-        background: none;             /* no fake “letterbox” */
+        height: 100%;
+        object-fit: contain;   /* always show full poster on desktop */
+        background: #000;
       }
 
-      .artist-gallery {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    /* Fine-tune banners on smaller phones so they are not cropped */
-    @media (max-width: 600px) {
       .banner-overlay {
-        bottom: -30px;
-        height: 50%;
+        bottom: -70px;  /* desktop values you liked */
+        height: 55%;
       }
     }
   </style>
