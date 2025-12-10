@@ -36,7 +36,6 @@
       box-shadow: 0 40px 120px rgba(0,0,0,0.9);
     }
 
-    /* TAG */
     .party-tag {
       padding: 6px 12px;
       border-radius: 999px;
@@ -59,7 +58,6 @@
       box-shadow: 0 0 12px rgba(255,46,159,0.7);
     }
 
-    /* INTRO SECTION */
     .intro-section {
       display: flex;
       flex-direction: row;
@@ -91,7 +89,6 @@
       display: block;
     }
 
-    /* STACK ON MOBILE */
     @media (max-width: 800px) {
       .intro-section {
         flex-direction: column;
@@ -115,7 +112,6 @@
       gap: 16px;
     }
 
-    /* ARTIST CARD */
     .artist-card {
       position: relative;
       border-radius: 18px;
@@ -126,47 +122,43 @@
       transition: 0.2s ease;
     }
 
-    /* Dim photo on hover */
     .artist-card:hover .artist-photo img {
       opacity: 0.45;
-      transform: scale(1.03);
+      transform: scale(1.02);
     }
 
-    /* Banner hover effects */
     .artist-card:hover .banner-overlay img {
-      transform: scale(1.15);
-      filter: drop-shadow(0 0 16px rgba(0,0,0,0.9));
+      transform: scale(1.12);
+      filter: drop-shadow(0 0 12px rgba(0,0,0,0.9));
     }
 
     .artist-photo img {
       width: 100%;
-      height: auto;
       display: block;
       object-fit: cover;
       transition: 0.25s ease;
     }
 
-    /* Banner overlay — LOWER + NO CROP */
+    /* ⭐ NEW LOWER POSITIONING FOR NAME BANNERS ⭐ */
     .banner-overlay {
       position: absolute;
-      bottom: -35px;       /* LOWERED NAME POSITION */
+      bottom: -60px;        /* PUSH IT WAY LOWER */
       left: 50%;
       transform: translateX(-50%);
-      width: 92%;
-      height: 55%;         /* MORE SPACE TO PREVENT CROPPING */
-      overflow: visible;   /* ensures no cropping */
+      width: 90%;
+      height: 55%;          /* more breathing room */
+      overflow: visible;    /* prevents cropping */
       pointer-events: none;
     }
 
     .banner-overlay img {
       width: 100%;
       height: auto;
-      object-fit: contain; /* prevents cropping */
+      object-fit: contain;
       transition: 0.25s ease;
       transform-origin: center;
     }
 
-    /* Mobile grid */
     @media (max-width: 600px) {
       .artist-gallery {
         grid-template-columns: repeat(2, 1fr);
@@ -183,17 +175,9 @@
       ABOUT TANTRUM
     </div>
 
-    <!-- INTRO SECTION -->
     <div class="intro-section">
-
       <div class="about-box">
-Chunhee goes dark as seven local DJs and producers from Seoul’s underground gather to push the edges of experimental club music. Popular and niche sounds have always collided, reshaping each other, and clubs remain the place where those collisions become movement. That’s why nights like this matter: we test limits, shift taste, and make space for something new.
-
-With three renowned performers joining the lineup, TANTRUM becomes less of a party and more of a collective release. Emotional outburst, catharsis, and breaking free from social norms, not as spectacle, but as necessity.
-
-붉은 춘희가 어두워진다. 서울 언더그라운드 씬의 로컬 DJ와 프로듀서 7명이 모여 실험적인 클럽 음악의 경계를 밀어붙인다. 대중적인 사운드와 마이너한 사운드는 언제나 충돌해 왔고 서로를 재구성해 왔다. 클럽은 그 충돌이 실제 움직임으로 이어지는 공간으로 남아 있다. 그래서 이런 밤이 중요하다. 우리는 한계를 시험하고 취향을 뒤흔들며 새로운 가능성을 위한 공간을 만든다.
-
-세 명의 독창적인 퍼포머들이 라인업에 합류하면서, TANTRUM은 단순한 파티를 넘어 집단적인 해방의 장으로 거듭난다. 감정의 폭발, 카타르시스, 사회적 규범에서의 해방은 더 이상 볼거리가 아닌, 필연이 된다.
+Chunhee goes dark as seven local DJs...
       </div>
 
       <div class="poster-shell">
