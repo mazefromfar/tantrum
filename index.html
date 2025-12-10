@@ -38,7 +38,7 @@
       box-sizing: border-box;
     }
 
-    /* LEFT POSTER: STICKY AND ALWAYS VISIBLE ON DESKTOP */
+    /* LEFT POSTER – DESKTOP (unchanged, perfect) */
     .poster-shell {
       flex: 0 0 45%;
       border-radius: 22px;
@@ -51,7 +51,7 @@
 
       position: sticky;
       top: 32px;
-      height: calc(100vh - 64px); /* fills viewport minus padding */
+      height: calc(100vh - 64px);
     }
 
     .poster-shell img {
@@ -121,7 +121,7 @@
       transition: 0.25s ease;
     }
 
-    /* RESPONSIVE */
+    /* RESPONSIVE – MOBILE / TABLET */
     @media (max-width: 900px) {
       body {
         padding: 16px;
@@ -130,19 +130,26 @@
       .frame {
         flex-direction: column;
         padding: 20px;
+        gap: 20px;
       }
 
+      /* On mobile: poster behaves like a normal card, no sticky, no big borders */
       .poster-shell {
         position: relative;
         top: auto;
         height: auto;
         width: 100%;
+        display: block;               /* remove flex centering */
+        border-radius: 18px;          /* match artist cards */
+        overflow: hidden;
       }
 
       .poster-shell img {
         width: 100%;
         height: auto;
-        object-fit: cover; /* fills the container on mobile, no borders */
+        display: block;
+        object-fit: cover;            /* same feel as other cards */
+        background: none;             /* no fake “letterbox” */
       }
 
       .artist-gallery {
@@ -150,10 +157,10 @@
       }
     }
 
-    /* TWEAK NAME BANNERS ON MOBILE SO THEY ARE NOT CROPPED */
+    /* Fine-tune banners on smaller phones so they are not cropped */
     @media (max-width: 600px) {
       .banner-overlay {
-        bottom: -30px;   /* move them up compared to desktop */
+        bottom: -30px;
         height: 50%;
       }
     }
@@ -163,14 +170,13 @@
 <body>
   <div class="frame">
 
-    <!-- LEFT: POSTER -->
+    <!-- POSTER -->
     <div class="poster-shell">
       <img src="party_poster.png" alt="TANTRUM Poster">
     </div>
 
-    <!-- RIGHT: ARTIST CARDS -->
+    <!-- ARTIST CARDS -->
     <div class="artist-panel">
-
       <div class="artist-gallery">
 
         <div class="artist-card">
