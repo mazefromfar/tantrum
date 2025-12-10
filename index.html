@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>TANTRUM (ep.1) at Chunhee</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    :root {
+      --bg: #050509;
+      --accent: #ff2e9f;
+      --text-main: #f5f5f5;
+      --text-muted: #b3b3c2;
+    }
+
+    body {
+      margin: 0;
+      background: #050509;
+      font-family: system-ui, sans-serif;
+      color: var(--text-main);
+      padding: 32px 16px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .frame {
+      width: 100%;
+      max-width: 1200px;
+      background: #0c0c17;
+      border-radius: 28px;
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      box-shadow: 0 40px 120px rgba(0,0,0,0.9);
+    }
+
+    /* TAG */
+    .party-tag {
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: #140d20;
+      border: 1px solid rgba(255,255,255,0.18);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+      width: fit-content;
+    }
+
+    .tag-dot {
+      width: 7px; height: 7px;
+      background: var(--accent);
+      border-radius: 50%;
+      box-shadow: 0 0 12px rgba(255,46,159,0.7);
+    }
+
+    /* INTRO SECTION */
+    .intro-section {
+      display: flex;
+      flex-direction: row;
+      gap: 24px;
+      align-items: flex-start;
+    }
+
+    .about-box {
+      flex: 1;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.12);
+      padding: 20px;
+      border-radius: 18px;
+      line-height: 1.55;
+      font-size: 14px;
+      white-space: pre-line;
+    }
+
+    .poster-shell {
+      flex: 0 0 36%;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: #000;
+    }
+
+    .poster-shell img {
+      width: 100%;
+      display: block;
+    }
+
+    /* STACK ON MOBILE */
+    @media (max-width: 800px) {
+      .intro-section {
+        flex-direction: column;
+      }
+      .poster-shell {
+        width: 100%;
+      }
+    }
+
+    .section-title {
+      font-size: 32px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      margin: 0;
+      text-align: left;
+    }
+
+    .artist-gallery {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+    }
+
+    /* ARTIST CARD */
+    .artist-card {
+      position: relative;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: #0c0c17;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    /* Dim photo on hover */
+    .artist-card:hover .artist-photo img {
+      opacity: 0.45;
+      transform: scale(1.02);
+    }
+
+    /* Banner hover effects */
+    .artist-card:hover .banner-overlay img {
+      transform: scale(1.10);
+      filter: drop-shadow(0 0 12px rgba(0,0,0,0.9));
+    }
+
+    .artist-photo img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+      transition: 0.25s ease;
+    }
+
+    /* Banner overlay (bigger container so no cropping happens) */
+    .banner-overlay {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 85%;
+      height: 36%;    /* increased from 30% so scaling won't crop edges */
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .banner-overlay img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+      transition: 0.25s ease;
+      transform-origin: center;
+    }
+
+    /* Mobile grid */
+    @media (max-width: 600px) {
+      .artist-gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="frame">
+
+    <div class="party-tag">
+      <div class="tag-dot"></div>
+      ABOUT TANTRUM
+    </div>
+
+    <!-- INTRO SECTION -->
+    <div class="intro-section">
+
+      <div class="about-box">
+Chunhee goes dark as seven local DJs and producers from Seoul’s underground gather to push the edges of experimental club music. Popular and niche sounds have always collided, reshaping each other, and clubs remain the place where those collisions become movement. That’s why nights like this matter: we test limits, shift taste, and make space for something new.
+
+With three renowned performers joining the lineup, TANTRUM becomes less of a party and more of a collective release. Emotional outburst, catharsis, and breaking free from social norms, not as spectacle, but as necessity.
+
+붉은 춘희가 어두워진다. 서울 언더그라운드 씬의 로컬 DJ와 프로듀서 7명이 모여 실험적인 클럽 음악의 경계를 밀어붙인다. 대중적인 사운드와 마이너한 사운드는 언제나 충돌해 왔고 서로를 재구성해 왔다. 클럽은 그 충돌이 실제 움직임으로 이어지는 공간으로 남아 있다. 그래서 이런 밤이 중요하다. 우리는 한계를 시험하고 취향을 뒤흔들며 새로운 가능성을 위한 공간을 만든다.
+
+세 명의 독창적인 퍼포머들이 라인업에 합류하면서, TANTRUM은 단순한 파티를 넘어 집단적인 해방의 장으로 거듭난다. 감정의 폭발, 카타르시스, 사회적 규범에서의 해방은 더 이상 볼거리가 아닌, 필연이 된다.
+      </div>
+
+      <div class="poster-shell">
+        <img src="party_poster.png" alt="TANTRUM Poster">
+      </div>
+    </div>
+
+    <h1 class="section-title">Lineup</h1>
+
+    <div class="artist-gallery">
+
+      <div class="artist-card">
+        <div class="artist-photo"><img src="1.png"></div>
+        <div class="banner-overlay"><img src="1_MARIELLDE.png"></div>
+      </div>
+
+      <div class="artist-card">
+        <div class="artist-photo"><img src="2.png"></div>
+        <div class="banner-overlay"><img src="2_CHEETARA.png"></div>
+      </div>
+
+      <div class="artist-card">
+        <div class="artist-photo"><img src="3.png"></div>
+        <div class="banner-overlay"><img src="3_MINJUNG.png"></div>
+      </div>
+
+      <div class="artist-card">
+        <div class="artist-photo"><img src="4.png"></div>
+        <div class="banner-overlay"><img src="4_MAZE.png"></div>
+      </div>
+
+      <div class="artist-card">
+        <div class="artist-photo"><img src="5.png"></div>
+        <div class="banner-overlay"><img src="5_AUGUST.png"></div>
+      </div>
+
+      <div class="artist-card">
+        <div class="artist-photo"><img src="6.png"></div>
+        <div class="banner-overlay"><img src="6_DAYOUNG.png"></div>
+      </div>
+
+      <div class="artist-card">
+        <div class="artist-photo"><img src="7.png"></div>
+        <div class="banner-overlay"><img src="7_NOA.png"></div>
+      </div>
+
+      <div class="artist-card">
+        <div class="artist-photo"><img src="8.png"></div>
+        <div class="banner-overlay"><img src="8_FAACIA.png"></div>
+      </div>
+
+      <div class="artist-card">
+        <div class="artist-photo"><img src="9.png"></div>
+        <div class="banner-overlay"><img src="9_KOIKOI.png"></div>
+      </div>
+
+      <div class="artist-card">
+        <div class="artist-photo"><img src="10.png"></div>
+        <div class="banner-overlay"><img src="10_UMI HOSHI.png"></div>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>
+
+ABOUT TANTRUM
+Chunhee goes dark as seven local DJs and producers from Seoul’s underground gather to push the edges of experimental club music. Popular and niche sounds have always collided, reshaping each other, and clubs remain the place where those collisions become movement. That’s why nights like this matter: we test limits, shift taste, and make space for something new.
+With three renowned performers joining the lineup, TANTRUM becomes less of a party and more of a collective release. Emotional outburst, catharsis, and breaking free from social norms, not as spectacle, but as necessity.
+
+LINEUP
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
