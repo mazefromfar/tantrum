@@ -113,7 +113,7 @@
       flex: 1;
     }
 
-    /* LINKS FRAME (Resident Advisor | Instagram | Tickets) */
+    /* LINKS FRAME */
 
     .links-card {
       border-radius: 18px;
@@ -478,22 +478,26 @@
       allowfullscreen></iframe>
   </div>
 
-  <!-- 2: CHEETARA (Instagram embed) -->
+  <!-- 2: CHEETARA – updated to YouTube -->
   <div id="artist2-embed" class="artist-embed-template" style="display:none">
-    <blockquote class="instagram-media"
-      data-instgrm-permalink="https://www.instagram.com/reel/DQZSmRljyrT/?utm_source=ig_embed&amp;utm_campaign=loading"
-      data-instgrm-version="14"
-      style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px auto; max-width:540px; min-width:326px; padding:0;">
-    </blockquote>
+    <iframe width="560" height="315"
+      src="https://www.youtube.com/embed/B7DSHM4ib-Q?si=pChMNFKaWbkIwYUV"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen></iframe>
   </div>
 
-  <!-- 3: MINJUNG (Instagram embed) -->
+  <!-- 3: MINJUNG – updated to YouTube Shorts -->
   <div id="artist3-embed" class="artist-embed-template" style="display:none">
-    <blockquote class="instagram-media"
-      data-instgrm-permalink="https://www.instagram.com/reel/DO-tIAyk-7D/?utm_source=ig_embed&amp;utm_campaign=loading"
-      data-instgrm-version="14"
-      style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px auto; max-width:540px; min-width:326px; padding:0;">
-    </blockquote>
+    <iframe width="560" height="315"
+      src="https://www.youtube.com/embed/mpPHBd4l2qE?si=lqPffwwdz56m8jGP"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen></iframe>
   </div>
 
   <!-- 4: MAZE -->
@@ -573,7 +577,7 @@
       allowfullscreen></iframe>
   </div>
 
-  <!-- Instagram embed script (used by blockquote embeds) -->
+  <!-- Instagram embed script (still here in case you add IG embeds again later) -->
   <script async src="https://www.instagram.com/embed.js"></script>
 
   <!-- SIMPLE JS TO HANDLE MODAL LOGIC -->
@@ -603,7 +607,6 @@
 
         modal.classList.add('open');
 
-        // Re-process Instagram embeds if script is loaded
         if (window.instgrm && window.instgrm.Embeds && typeof window.instgrm.Embeds.process === 'function') {
           window.instgrm.Embeds.process();
         }
