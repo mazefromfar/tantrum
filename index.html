@@ -129,13 +129,13 @@
     /* Dim photo on hover */
     .artist-card:hover .artist-photo img {
       opacity: 0.45;
-      transform: scale(1.02);
+      transform: scale(1.03);
     }
 
     /* Banner hover effects */
     .artist-card:hover .banner-overlay img {
-      transform: scale(1.10);
-      filter: drop-shadow(0 0 12px rgba(0,0,0,0.9));
+      transform: scale(1.15);
+      filter: drop-shadow(0 0 16px rgba(0,0,0,0.9));
     }
 
     .artist-photo img {
@@ -146,26 +146,25 @@
       transition: 0.25s ease;
     }
 
-    /* Banner overlay (bigger container so no cropping happens) */
-.banner-overlay {
-  position: absolute;
-  bottom: -20px; 
-  left: 50%;
-  transform: translateX(-50%);
-  width: 90%;
-  height: 45%;
-  overflow: visible;
-  pointer-events: none;
-}
+    /* Banner overlay — LOWER + NO CROP */
+    .banner-overlay {
+      position: absolute;
+      bottom: -35px;       /* LOWERED NAME POSITION */
+      left: 50%;
+      transform: translateX(-50%);
+      width: 92%;
+      height: 55%;         /* MORE SPACE TO PREVENT CROPPING */
+      overflow: visible;   /* ensures no cropping */
+      pointer-events: none;
+    }
 
-.banner-overlay img {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-  transition: 0.25s ease;
-  transform-origin: center;
-}
-
+    .banner-overlay img {
+      width: 100%;
+      height: auto;
+      object-fit: contain; /* prevents cropping */
+      transition: 0.25s ease;
+      transform-origin: center;
+    }
 
     /* Mobile grid */
     @media (max-width: 600px) {
@@ -260,21 +259,3 @@ With three renowned performers joining the lineup, TANTRUM becomes less of a par
   </div>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
