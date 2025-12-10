@@ -44,13 +44,16 @@
       border: 1px solid rgba(255,255,255,0.12);
       background: #000;
       display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .poster-shell img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain; /* NEVER ZOOMS OR CROPS */
       display: block;
+      background: #000;
     }
 
     /* RIGHT GRID OF ARTISTS */
@@ -59,13 +62,6 @@
       display: flex;
       flex-direction: column;
       gap: 24px;
-    }
-
-    .section-title {
-      font-size: 32px;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      margin: 0;
     }
 
     .artist-gallery {
@@ -148,57 +144,56 @@
 
     <!-- RIGHT: ARTIST CARDS -->
     <div class="artist-panel">
-      <h1 class="section-title">Lineup</h1>
 
       <div class="artist-gallery">
 
         <div class="artist-card">
-          <div class="artist-photo"><img src="1.png" alt=""></div>
+          <div class="artist-photo"><img src="1.png"></div>
           <div class="banner-overlay"><img src="1_MARIELLDE.png"></div>
         </div>
 
         <div class="artist-card">
-          <div class="artist-photo"><img src="2.png" alt=""></div>
+          <div class="artist-photo"><img src="2.png"></div>
           <div class="banner-overlay"><img src="2_CHEETARA.png"></div>
         </div>
 
         <div class="artist-card">
-          <div class="artist-photo"><img src="3.png" alt=""></div>
+          <div class="artist-photo"><img src="3.png"></div>
           <div class="banner-overlay"><img src="3_MINJUNG.png"></div>
         </div>
 
         <div class="artist-card">
-          <div class="artist-photo"><img src="4.png" alt=""></div>
+          <div class="artist-photo"><img src="4.png"></div>
           <div class="banner-overlay"><img src="4_MAZE.png"></div>
         </div>
 
         <div class="artist-card">
-          <div class="artist-photo"><img src="5.png" alt=""></div>
+          <div class="artist-photo"><img src="5.png"></div>
           <div class="banner-overlay"><img src="5_AUGUST.png"></div>
         </div>
 
         <div class="artist-card">
-          <div class="artist-photo"><img src="6.png" alt=""></div>
+          <div class="artist-photo"><img src="6.png"></div>
           <div class="banner-overlay"><img src="6_DAYOUNG.png"></div>
         </div>
 
         <div class="artist-card">
-          <div class="artist-photo"><img src="7.png" alt=""></div>
+          <div class="artist-photo"><img src="7.png"></div>
           <div class="banner-overlay"><img src="7_NOA.png"></div>
         </div>
 
         <div class="artist-card">
-          <div class="artist-photo"><img src="8.png" alt=""></div>
+          <div class="artist-photo"><img src="8.png"></div>
           <div class="banner-overlay"><img src="8_FAACIA.png"></div>
         </div>
 
         <div class="artist-card">
-          <div class="artist-photo"><img src="9.png" alt=""></div>
+          <div class="artist-photo"><img src="9.png"></div>
           <div class="banner-overlay"><img src="9_KOIKOI.png"></div>
         </div>
 
         <div class="artist-card">
-          <div class="artist-photo"><img src="10.png" alt=""></div>
+          <div class="artist-photo"><img src="10.png"></div>
           <div class="banner-overlay"><img src="10_UMI HOSHI.png"></div>
         </div>
 
