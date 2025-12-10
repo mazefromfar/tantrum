@@ -34,12 +34,12 @@
       padding: 20px;
       box-shadow: 0 40px 120px rgba(0,0,0,0.9);
       display: flex;
-      flex-direction: column;  /* poster on top, then timetable, then cards */
+      flex-direction: column;
       gap: 20px;
       box-sizing: border-box;
     }
 
-    /* POSTER — MOBILE: simple full-width card, no extra height */
+    /* POSTER */
     .poster-shell {
       width: 100%;
       border-radius: 18px;
@@ -59,7 +59,7 @@
       object-fit: cover;
     }
 
-    /* TIMETABLE CARD */
+    /* TIMETABLE FRAME */
 
     .schedule-card {
       border-radius: 18px;
@@ -113,10 +113,34 @@
       flex: 1;
     }
 
-    .schedule-note {
-      margin-top: 6px;
-      font-size: 12px;
+    /* LINKS FRAME (Resident Advisor | Instagram | Tickets) */
+
+    .links-card {
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.03);
+      padding: 14px 18px;
+      font-size: 13px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .link-item {
+      color: var(--text-main);
+      text-decoration: none;
+      font-size: 13px;
+      transition: 0.2s ease;
+    }
+
+    .link-item:hover {
+      color: var(--accent);
+    }
+
+    .link-separator {
       color: var(--text-muted);
+      font-size: 13px;
     }
 
     /* ARTIST GRID */
@@ -162,7 +186,6 @@
       transition: 0.25s ease;
     }
 
-    /* banner position – tuned for mobile first */
     .banner-overlay {
       position: absolute;
       bottom: -30px;
@@ -180,14 +203,15 @@
       transition: 0.25s ease;
     }
 
-    /* -------- DESKTOP / LARGE SCREENS -------- */
+    /* DESKTOP LAYOUT */
     @media (min-width: 900px) {
+
       body {
         padding: 32px;
       }
 
       .frame {
-        flex-direction: row;   /* poster left, timetable + cards right */
+        flex-direction: row;
         padding: 32px;
         gap: 32px;
         align-items: flex-start;
@@ -208,7 +232,6 @@
         width: 100%;
         height: 100%;
         object-fit: contain;
-        background: #000;
       }
 
       .artist-panel {
@@ -220,6 +243,7 @@
         height: 55%;
       }
     }
+
   </style>
 </head>
 
@@ -231,39 +255,33 @@
       <img src="party_poster.png" alt="TANTRUM Poster">
     </div>
 
-    <!-- RIGHT SIDE: TIMETABLE + ARTIST CARDS -->
+    <!-- RIGHT SIDE CONTENT -->
     <div class="artist-panel">
 
-      <!-- TIMETABLE FRAME -->
+      <!-- TIMETABLE -->
       <div class="schedule-card">
         <div class="schedule-title">DJ Timetable</div>
 
         <div class="schedule-grid">
-          <div class="schedule-row">
-            <span class="slot-time">22:00 to 23:10</span>
-            <span class="slot-name">FAACIA B2B NOA</span>
-          </div>
-          <div class="schedule-row">
-            <span class="slot-time">23:10 to 00:20</span>
-            <span class="slot-name">UMI HOSHI</span>
-          </div>
-          <div class="schedule-row">
-            <span class="slot-time">00:20 to 01:30</span>
-            <span class="slot-name">AUGUST</span>
-          </div>
-          <div class="schedule-row">
-            <span class="slot-time">01:30 to 02:40</span>
-            <span class="slot-name">MAZE</span>
-          </div>
-          <div class="schedule-row">
-            <span class="slot-time">02:40 to 03:50</span>
-            <span class="slot-name">DAYOUNG</span>
-          </div>
-          <div class="schedule-row">
-            <span class="slot-time">03:50 to 05:00</span>
-            <span class="slot-name">KOI KOI</span>
-          </div>
+          <div class="schedule-row"><span class="slot-time">22:00 to 23:10</span><span class="slot-name">FAACIA B2B NOA</span></div>
+          <div class="schedule-row"><span class="slot-time">23:10 to 00:20</span><span class="slot-name">UMI HOSHI</span></div>
+          <div class="schedule-row"><span class="slot-time">00:20 to 01:30</span><span class="slot-name">AUGUST</span></div>
+          <div class="schedule-row"><span class="slot-time">01:30 to 02:40</span><span class="slot-name">MAZE</span></div>
+          <div class="schedule-row"><span class="slot-time">02:40 to 03:50</span><span class="slot-name">DAYOUNG</span></div>
+          <div class="schedule-row"><span class="slot-time">03:50 to 05:00</span><span class="slot-name">KOI KOI</span></div>
         </div>
+      </div>
+
+      <!-- LINKS FRAME -->
+      <div class="links-card">
+
+        <a href="https://ra.co/events/2317741" target="_blank" class="link-item">Resident Advisor</a>
+        <span class="link-separator">|</span>
+
+        <a href="https://www.instagram.com/tantrumseoul/" target="_blank" class="link-item">Instagram</a>
+        <span class="link-separator">|</span>
+
+        <a href="https://forms.gle/tJbQypocKLXygewZ6" target="_blank" class="link-item">Tickets</a>
 
       </div>
 
@@ -321,8 +339,8 @@
         </div>
 
       </div>
-    </div>
 
+    </div>
   </div>
 </body>
 </html>
