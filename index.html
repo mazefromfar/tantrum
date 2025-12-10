@@ -203,6 +203,92 @@
       transition: 0.25s ease;
     }
 
+    /* MODAL */
+
+    .artist-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.75);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      padding: 16px;
+    }
+
+    .artist-modal.open {
+      display: flex;
+    }
+
+    .artist-modal-backdrop {
+      position: absolute;
+      inset: 0;
+    }
+
+    .artist-modal-content {
+      position: relative;
+      background: #050509;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 20px 20px 18px;
+      max-width: 760px;
+      width: 100%;
+      z-index: 1;
+      box-shadow: 0 30px 100px rgba(0,0,0,0.9);
+      box-sizing: border-box;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 10px;
+      right: 14px;
+      border: none;
+      background: transparent;
+      color: var(--text-muted);
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    .modal-name {
+      margin: 0 0 6px;
+      font-size: 18px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+    }
+
+    .modal-instagram {
+      display: inline-block;
+      font-size: 13px;
+      color: var(--accent);
+      text-decoration: none;
+      margin-bottom: 12px;
+    }
+
+    .modal-instagram:hover {
+      text-decoration: underline;
+    }
+
+    .modal-embed {
+      width: 100%;
+      max-height: 70vh;
+      overflow: auto;
+      border-radius: 12px;
+    }
+
+    .artist-modal-content iframe {
+      width: 100%;
+      max-width: 100%;
+      border: none;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .artist-modal-content blockquote.instagram-media {
+      max-width: 100% !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+
     /* DESKTOP LAYOUT */
     @media (min-width: 900px) {
 
@@ -243,7 +329,6 @@
         height: 55%;
       }
     }
-
   </style>
 </head>
 
@@ -274,73 +359,274 @@
 
       <!-- LINKS FRAME -->
       <div class="links-card">
-
         <a href="https://ra.co/events/2317741" target="_blank" class="link-item">Resident Advisor</a>
         <span class="link-separator">|</span>
-
         <a href="https://www.instagram.com/tantrumseoul/" target="_blank" class="link-item">Instagram</a>
         <span class="link-separator">|</span>
-
         <a href="https://forms.gle/tJbQypocKLXygewZ6" target="_blank" class="link-item">Tickets</a>
-
       </div>
 
       <!-- ARTIST CARDS -->
       <div class="artist-gallery">
 
-        <div class="artist-card">
-          <div class="artist-photo"><img src="1.png" alt=""></div>
-          <div class="banner-overlay"><img src="1_MARIELLDE.png" alt=""></div>
+        <div class="artist-card"
+             data-name="Mariellde"
+             data-instagram="https://www.instagram.com/_mariellde/"
+             data-template="artist1-embed">
+          <div class="artist-photo"><img src="1.png" alt="Mariellde"></div>
+          <div class="banner-overlay"><img src="1_MARIELLDE.png" alt="Mariellde"></div>
         </div>
 
-        <div class="artist-card">
-          <div class="artist-photo"><img src="2.png" alt=""></div>
-          <div class="banner-overlay"><img src="2_CHEETARA.png" alt=""></div>
+        <div class="artist-card"
+             data-name="Cheetara"
+             data-instagram="https://www.instagram.com/cheetara.xo/"
+             data-template="artist2-embed">
+          <div class="artist-photo"><img src="2.png" alt="Cheetara"></div>
+          <div class="banner-overlay"><img src="2_CHEETARA.png" alt="Cheetara"></div>
         </div>
 
-        <div class="artist-card">
-          <div class="artist-photo"><img src="3.png" alt=""></div>
-          <div class="banner-overlay"><img src="3_MINJUNG.png" alt=""></div>
+        <div class="artist-card"
+             data-name="Minjung"
+             data-instagram="https://www.instagram.com/mmmmminnnnnnn/"
+             data-template="artist3-embed">
+          <div class="artist-photo"><img src="3.png" alt="Minjung"></div>
+          <div class="banner-overlay"><img src="3_MINJUNG.png" alt="Minjung"></div>
         </div>
 
-        <div class="artist-card">
-          <div class="artist-photo"><img src="4.png" alt=""></div>
-          <div class="banner-overlay"><img src="4_MAZE.png" alt=""></div>
+        <div class="artist-card"
+             data-name="Maze"
+             data-instagram="https://www.instagram.com/mazefromfar/"
+             data-template="artist4-embed">
+          <div class="artist-photo"><img src="4.png" alt="Maze"></div>
+          <div class="banner-overlay"><img src="4_MAZE.png" alt="Maze"></div>
         </div>
 
-        <div class="artist-card">
-          <div class="artist-photo"><img src="5.png" alt=""></div>
-          <div class="banner-overlay"><img src="5_AUGUST.png" alt=""></div>
+        <div class="artist-card"
+             data-name="August"
+             data-instagram="https://www.instagram.com/august888888888/"
+             data-template="artist5-embed">
+          <div class="artist-photo"><img src="5.png" alt="August"></div>
+          <div class="banner-overlay"><img src="5_AUGUST.png" alt="August"></div>
         </div>
 
-        <div class="artist-card">
-          <div class="artist-photo"><img src="6.png" alt=""></div>
-          <div class="banner-overlay"><img src="6_DAYOUNG.png" alt=""></div>
+        <div class="artist-card"
+             data-name="Dayoung"
+             data-instagram="https://www.instagram.com/dayounglie/"
+             data-template="artist6-embed">
+          <div class="artist-photo"><img src="6.png" alt="Dayoung"></div>
+          <div class="banner-overlay"><img src="6_DAYOUNG.png" alt="Dayoung"></div>
         </div>
 
-        <div class="artist-card">
-          <div class="artist-photo"><img src="7.png" alt=""></div>
-          <div class="banner-overlay"><img src="7_NOA.png" alt=""></div>
+        <div class="artist-card"
+             data-name="Noa"
+             data-instagram="https://www.instagram.com/namaenoa/"
+             data-template="artist7-embed">
+          <div class="artist-photo"><img src="7.png" alt="Noa"></div>
+          <div class="banner-overlay"><img src="7_NOA.png" alt="Noa"></div>
         </div>
 
-        <div class="artist-card">
-          <div class="artist-photo"><img src="8.png" alt=""></div>
-          <div class="banner-overlay"><img src="8_FAACIA.png" alt=""></div>
+        <div class="artist-card"
+             data-name="Faacia"
+             data-instagram="https://www.instagram.com/faacia.or0/"
+             data-template="artist8-embed">
+          <div class="artist-photo"><img src="8.png" alt="Faacia"></div>
+          <div class="banner-overlay"><img src="8_FAACIA.png" alt="Faacia"></div>
         </div>
 
-        <div class="artist-card">
-          <div class="artist-photo"><img src="9.png" alt=""></div>
-          <div class="banner-overlay"><img src="9_KOIKOI.png" alt=""></div>
+        <div class="artist-card"
+             data-name="Koi Koi"
+             data-instagram="https://www.instagram.com/koikoi.web/"
+             data-template="artist9-embed">
+          <div class="artist-photo"><img src="9.png" alt="Koi Koi"></div>
+          <div class="banner-overlay"><img src="9_KOIKOI.png" alt="Koi Koi"></div>
         </div>
 
-        <div class="artist-card">
-          <div class="artist-photo"><img src="10.png" alt=""></div>
-          <div class="banner-overlay"><img src="10_UMI HOSHI.png" alt=""></div>
+        <div class="artist-card"
+             data-name="Umi Hoshi"
+             data-instagram="https://www.instagram.com/umi__hoshi/"
+             data-template="artist10-embed">
+          <div class="artist-photo"><img src="10.png" alt="Umi Hoshi"></div>
+          <div class="banner-overlay"><img src="10_UMI HOSHI.png" alt="Umi Hoshi"></div>
         </div>
 
       </div>
 
     </div>
   </div>
+
+  <!-- MODAL -->
+  <div class="artist-modal" id="artistModal">
+    <div class="artist-modal-backdrop"></div>
+    <div class="artist-modal-content">
+      <button class="modal-close" aria-label="Close">&times;</button>
+      <h2 class="modal-name"></h2>
+      <a class="modal-instagram" href="#" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <div class="modal-embed"></div>
+    </div>
+  </div>
+
+  <!-- HIDDEN EMBED TEMPLATES (1–10, mapped to artists in order) -->
+
+  <!-- 1: MARIELLDE -->
+  <div id="artist1-embed" class="artist-embed-template" style="display:none">
+    <iframe width="560" height="315"
+      src="https://www.youtube.com/embed/MsHUkMPy1x8?si=4kr2fd0qJZ-m4xMH"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen></iframe>
+  </div>
+
+  <!-- 2: CHEETARA (Instagram embed) -->
+  <div id="artist2-embed" class="artist-embed-template" style="display:none">
+    <blockquote class="instagram-media"
+      data-instgrm-permalink="https://www.instagram.com/reel/DQZSmRljyrT/?utm_source=ig_embed&amp;utm_campaign=loading"
+      data-instgrm-version="14"
+      style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px auto; max-width:540px; min-width:326px; padding:0;">
+    </blockquote>
+  </div>
+
+  <!-- 3: MINJUNG (Instagram embed) -->
+  <div id="artist3-embed" class="artist-embed-template" style="display:none">
+    <blockquote class="instagram-media"
+      data-instgrm-permalink="https://www.instagram.com/reel/DO-tIAyk-7D/?utm_source=ig_embed&amp;utm_campaign=loading"
+      data-instgrm-version="14"
+      style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px auto; max-width:540px; min-width:326px; padding:0;">
+    </blockquote>
+  </div>
+
+  <!-- 4: MAZE -->
+  <div id="artist4-embed" class="artist-embed-template" style="display:none">
+    <iframe width="560" height="315"
+      src="https://www.youtube.com/embed/zEmSBE-ZfZY?si=WXtFq9u2G8JUxAUj"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen></iframe>
+  </div>
+
+  <!-- 5: AUGUST -->
+  <div id="artist5-embed" class="artist-embed-template" style="display:none">
+    <iframe width="560" height="315"
+      src="https://www.youtube.com/embed/uDDEPJWBH1w?si=DwbcJTNY4GNh60a4"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen></iframe>
+  </div>
+
+  <!-- 6: DAYOUNG -->
+  <div id="artist6-embed" class="artist-embed-template" style="display:none">
+    <iframe width="560" height="315"
+      src="https://www.youtube.com/embed/q8O9r3vlUAo?si=nJYXJHTM51u9WYJV"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen></iframe>
+  </div>
+
+  <!-- 7: NOA -->
+  <div id="artist7-embed" class="artist-embed-template" style="display:none">
+    <iframe width="560" height="315"
+      src="https://www.youtube.com/embed/n2tenfKBesA?si=SIKnCwh9OmrqkjOC"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen></iframe>
+  </div>
+
+  <!-- 8: FAACIA -->
+  <div id="artist8-embed" class="artist-embed-template" style="display:none">
+    <iframe width="560" height="315"
+      src="https://www.youtube.com/embed/F9p4biSbsgE?si=arsEnlSmvXluf4Pq"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen></iframe>
+  </div>
+
+  <!-- 9: KOI KOI -->
+  <div id="artist9-embed" class="artist-embed-template" style="display:none">
+    <iframe width="560" height="315"
+      src="https://www.youtube.com/embed/feU68nGhqO0?si=8ihm26XBgJX3CxL8"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen></iframe>
+  </div>
+
+  <!-- 10: UMI HOSHI -->
+  <div id="artist10-embed" class="artist-embed-template" style="display:none">
+    <iframe width="560" height="315"
+      src="https://www.youtube.com/embed/f_OFWt8L11M?si=wqmyEXndUb_7dzGA"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen></iframe>
+  </div>
+
+  <!-- Instagram embed script (used by blockquote embeds) -->
+  <script async src="https://www.instagram.com/embed.js"></script>
+
+  <!-- SIMPLE JS TO HANDLE MODAL LOGIC -->
+  <script>
+    (function () {
+      const modal = document.getElementById('artistModal');
+      const modalName = modal.querySelector('.modal-name');
+      const modalInsta = modal.querySelector('.modal-instagram');
+      const modalEmbed = modal.querySelector('.modal-embed');
+      const closeBtn = modal.querySelector('.modal-close');
+      const backdrop = modal.querySelector('.artist-modal-backdrop');
+
+      function openModal(card) {
+        const name = card.dataset.name || '';
+        const instagram = card.dataset.instagram || '#';
+        const templateId = card.dataset.template;
+        const template = templateId ? document.getElementById(templateId) : null;
+
+        modalName.textContent = name;
+        modalInsta.href = instagram;
+        modalInsta.textContent = 'Instagram';
+
+        modalEmbed.innerHTML = '';
+        if (template) {
+          modalEmbed.innerHTML = template.innerHTML;
+        }
+
+        modal.classList.add('open');
+
+        // Re-process Instagram embeds if script is loaded
+        if (window.instgrm && window.instgrm.Embeds && typeof window.instgrm.Embeds.process === 'function') {
+          window.instgrm.Embeds.process();
+        }
+      }
+
+      function closeModal() {
+        modal.classList.remove('open');
+        modalEmbed.innerHTML = '';
+      }
+
+      document.querySelectorAll('.artist-card').forEach(card => {
+        card.addEventListener('click', () => openModal(card));
+      });
+
+      closeBtn.addEventListener('click', closeModal);
+      backdrop.addEventListener('click', closeModal);
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          closeModal();
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
