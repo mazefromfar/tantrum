@@ -52,7 +52,8 @@
     }
 
     .tag-dot {
-      width: 7px; height: 7px;
+      width: 7px; 
+      height: 7px;
       background: var(--accent);
       border-radius: 50%;
       box-shadow: 0 0 12px rgba(255,46,159,0.7);
@@ -73,7 +74,15 @@
       border-radius: 18px;
       line-height: 1.55;
       font-size: 14px;
-      white-space: pre-line;
+      white-space: normal;
+    }
+
+    .about-box p {
+      margin: 0 0 10px;
+    }
+
+    .about-box p:last-child {
+      margin-bottom: 0;
     }
 
     .poster-shell {
@@ -139,15 +148,15 @@
       transition: 0.25s ease;
     }
 
-    /* ⭐ NEW LOWER POSITIONING FOR NAME BANNERS ⭐ */
+    /* ⭐ LOWER POSITIONING FOR NAME BANNERS ⭐ */
     .banner-overlay {
       position: absolute;
-      bottom: -70px;        /* PUSH IT WAY LOWER */
+      bottom: -70px;
       left: 50%;
       transform: translateX(-50%);
       width: 90%;
-      height: 55%;          /* more breathing room */
-      overflow: visible;    /* prevents cropping */
+      height: 55%;
+      overflow: visible;
       pointer-events: none;
     }
 
@@ -177,7 +186,18 @@
 
     <div class="intro-section">
       <div class="about-box">
- Chunhee goes dark as seven local DJs and producers from Seoul’s underground gather to push the edges of experimental club music. Popular and niche sounds have always collided, reshaping each other, and clubs remain the place where those collisions become movement. That’s why nights like this matter: we test limits, shift taste, and make space for something new. With three renowned performers joining the lineup, TANTRUM becomes less of a party and more of a collective release. Emotional outburst, catharsis, and breaking free from social norms, not as spectacle, but as necessity. 붉은 춘희가 어두워진다. 서울 언더그라운드 씬의 로컬 DJ와 프로듀서 7명이 모여 실험적인 클럽 음악의 경계를 밀어붙인다. 대중적인 사운드와 마이너한 사운드는 언제나 충돌해 왔고 서로를 재구성해 왔다. 클럽은 그 충돌이 실제 움직임으로 이어지는 공간으로 남아 있다. 그래서 이런 밤이 중요하다. 우리는 한계를 시험하고 취향을 뒤흔들며 새로운 가능성을 위한 공간을 만든다. 세 명의 독창적인 퍼포머들이 라인업에 합류하면서, TANTRUM은 단순한 파티를 넘어 집단적인 해방의 장으로 거듭난다. 감정의 폭발, 카타르시스, 사회적 규범에서의 해방은 더 이상 볼거리가 아닌, 필연이 된다.
+        <p>
+          Chunhee goes dark as seven local DJs and producers from Seoul’s underground gather to push the edges of experimental club music. Popular and niche sounds have always collided, reshaping each other, and clubs remain the place where those collisions become movement.
+        </p>
+        <p>
+          That’s why nights like this matter: we test limits, shift taste, and make space for something new. With three renowned performers joining the lineup, TANTRUM becomes less of a party and more of a collective release. Emotional outburst, catharsis, and breaking free from social norms, not as spectacle, but as necessity.
+        </p>
+        <p>
+          붉은 춘희가 어두워진다. 서울 언더그라운드 씬의 로컬 DJ와 프로듀서 7명이 모여 실험적인 클럽 음악의 경계를 밀어붙인다. 대중적인 사운드와 마이너한 사운드는 언제나 충돌해 왔고 서로를 재구성해 왔다. 클럽은 그 충돌이 실제 움직임으로 이어지는 공간으로 남아 있다.
+        </p>
+        <p>
+          그래서 이런 밤이 중요하다. 우리는 한계를 시험하고 취향을 뒤흔들며 새로운 가능성을 위한 공간을 만든다. 세 명의 독창적인 퍼포머들이 라인업에 합류하면서, TANTRUM은 단순한 파티를 넘어 집단적인 해방의 장으로 거듭난다. 감정의 폭발, 카타르시스, 사회적 규범에서의 해방은 더 이상 볼거리가 아닌, 필연이 된다.
+        </p>
       </div>
 
       <div class="poster-shell">
@@ -190,53 +210,53 @@
     <div class="artist-gallery">
 
       <div class="artist-card">
-        <div class="artist-photo"><img src="1.png"></div>
-        <div class="banner-overlay"><img src="1_MARIELLDE.png"></div>
+        <div class="artist-photo"><img src="1.png" alt="MARIELLDE photo"></div>
+        <div class="banner-overlay"><img src="1_MARIELLDE.png" alt="MARIELLDE"></div>
       </div>
 
       <div class="artist-card">
-        <div class="artist-photo"><img src="2.png"></div>
-        <div class="banner-overlay"><img src="2_CHEETARA.png"></div>
+        <div class="artist-photo"><img src="2.png" alt="CHEETARA photo"></div>
+        <div class="banner-overlay"><img src="2_CHEETARA.png" alt="CHEETARA"></div>
       </div>
 
       <div class="artist-card">
-        <div class="artist-photo"><img src="3.png"></div>
-        <div class="banner-overlay"><img src="3_MINJUNG.png"></div>
+        <div class="artist-photo"><img src="3.png" alt="MINJUNG photo"></div>
+        <div class="banner-overlay"><img src="3_MINJUNG.png" alt="MINJUNG"></div>
       </div>
 
       <div class="artist-card">
-        <div class="artist-photo"><img src="4.png"></div>
-        <div class="banner-overlay"><img src="4_MAZE.png"></div>
+        <div class="artist-photo"><img src="4.png" alt="MAZE photo"></div>
+        <div class="banner-overlay"><img src="4_MAZE.png" alt="MAZE"></div>
       </div>
 
       <div class="artist-card">
-        <div class="artist-photo"><img src="5.png"></div>
-        <div class="banner-overlay"><img src="5_AUGUST.png"></div>
+        <div class="artist-photo"><img src="5.png" alt="AUGUST photo"></div>
+        <div class="banner-overlay"><img src="5_AUGUST.png" alt="AUGUST"></div>
       </div>
 
       <div class="artist-card">
-        <div class="artist-photo"><img src="6.png"></div>
-        <div class="banner-overlay"><img src="6_DAYOUNG.png"></div>
+        <div class="artist-photo"><img src="6.png" alt="DAYOUNG photo"></div>
+        <div class="banner-overlay"><img src="6_DAYOUNG.png" alt="DAYOUNG"></div>
       </div>
 
       <div class="artist-card">
-        <div class="artist-photo"><img src="7.png"></div>
-        <div class="banner-overlay"><img src="7_NOA.png"></div>
+        <div class="artist-photo"><img src="7.png" alt="NOA photo"></div>
+        <div class="banner-overlay"><img src="7_NOA.png" alt="NOA"></div>
       </div>
 
       <div class="artist-card">
-        <div class="artist-photo"><img src="8.png"></div>
-        <div class="banner-overlay"><img src="8_FAACIA.png"></div>
+        <div class="artist-photo"><img src="8.png" alt="FAACIA photo"></div>
+        <div class="banner-overlay"><img src="8_FAACIA.png" alt="FAACIA"></div>
       </div>
 
       <div class="artist-card">
-        <div class="artist-photo"><img src="9.png"></div>
-        <div class="banner-overlay"><img src="9_KOIKOI.png"></div>
+        <div class="artist-photo"><img src="9.png" alt="KOI KOI photo"></div>
+        <div class="banner-overlay"><img src="9_KOIKOI.png" alt="KOI KOI"></div>
       </div>
 
       <div class="artist-card">
-        <div class="artist-photo"><img src="10.png"></div>
-        <div class="banner-overlay"><img src="10_UMI HOSHI.png"></div>
+        <div class="artist-photo"><img src="10.png" alt="UMI HOSHI photo"></div>
+        <div class="banner-overlay"><img src="10_UMI HOSHI.png" alt="UMI HOSHI"></div>
       </div>
 
     </div>
