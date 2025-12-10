@@ -34,9 +34,11 @@
       display: flex;
       flex-direction: row;
       gap: 32px;
+      align-items: flex-start;
+      box-sizing: border-box;
     }
 
-    /* LEFT POSTER */
+    /* LEFT POSTER: STICKY AND ALWAYS VISIBLE ON DESKTOP */
     .poster-shell {
       flex: 0 0 45%;
       border-radius: 22px;
@@ -46,12 +48,16 @@
       display: flex;
       justify-content: center;
       align-items: center;
+
+      position: sticky;
+      top: 32px;
+      height: calc(100vh - 64px); /* fills viewport minus padding */
     }
 
     .poster-shell img {
       width: 100%;
       height: 100%;
-      object-fit: contain; /* NEVER ZOOMS OR CROPS */
+      object-fit: contain; /* always show full poster on desktop */
       display: block;
       background: #000;
     }
@@ -117,13 +123,26 @@
 
     /* RESPONSIVE */
     @media (max-width: 900px) {
+      body {
+        padding: 16px;
+      }
+
       .frame {
         flex-direction: column;
+        padding: 20px;
       }
 
       .poster-shell {
+        position: relative;
+        top: auto;
+        height: auto;
+        width: 100%;
+      }
+
+      .poster-shell img {
         width: 100%;
         height: auto;
+        object-fit: cover; /* no huge borders on mobile */
       }
 
       .artist-gallery {
@@ -131,6 +150,13 @@
       }
     }
 
+    /* TWEAK NAME BANNERS ON MOBILE SO THEY ARE NOT CROPPED */
+    @media (max-width: 600px) {
+      .banner-overlay {
+        bottom: -30px;   /* move them up compared to desktop */
+        height: 50%;
+      }
+    }
   </style>
 </head>
 
@@ -148,53 +174,53 @@
       <div class="artist-gallery">
 
         <div class="artist-card">
-          <div class="artist-photo"><img src="1.png"></div>
-          <div class="banner-overlay"><img src="1_MARIELLDE.png"></div>
+          <div class="artist-photo"><img src="1.png" alt=""></div>
+          <div class="banner-overlay"><img src="1_MARIELLDE.png" alt=""></div>
         </div>
 
         <div class="artist-card">
-          <div class="artist-photo"><img src="2.png"></div>
-          <div class="banner-overlay"><img src="2_CHEETARA.png"></div>
+          <div class="artist-photo"><img src="2.png" alt=""></div>
+          <div class="banner-overlay"><img src="2_CHEETARA.png" alt=""></div>
         </div>
 
         <div class="artist-card">
-          <div class="artist-photo"><img src="3.png"></div>
-          <div class="banner-overlay"><img src="3_MINJUNG.png"></div>
+          <div class="artist-photo"><img src="3.png" alt=""></div>
+          <div class="banner-overlay"><img src="3_MINJUNG.png" alt=""></div>
         </div>
 
         <div class="artist-card">
-          <div class="artist-photo"><img src="4.png"></div>
-          <div class="banner-overlay"><img src="4_MAZE.png"></div>
+          <div class="artist-photo"><img src="4.png" alt=""></div>
+          <div class="banner-overlay"><img src="4_MAZE.png" alt=""></div>
         </div>
 
         <div class="artist-card">
-          <div class="artist-photo"><img src="5.png"></div>
-          <div class="banner-overlay"><img src="5_AUGUST.png"></div>
+          <div class="artist-photo"><img src="5.png" alt=""></div>
+          <div class="banner-overlay"><img src="5_AUGUST.png" alt=""></div>
         </div>
 
         <div class="artist-card">
-          <div class="artist-photo"><img src="6.png"></div>
-          <div class="banner-overlay"><img src="6_DAYOUNG.png"></div>
+          <div class="artist-photo"><img src="6.png" alt=""></div>
+          <div class="banner-overlay"><img src="6_DAYOUNG.png" alt=""></div>
         </div>
 
         <div class="artist-card">
-          <div class="artist-photo"><img src="7.png"></div>
-          <div class="banner-overlay"><img src="7_NOA.png"></div>
+          <div class="artist-photo"><img src="7.png" alt=""></div>
+          <div class="banner-overlay"><img src="7_NOA.png" alt=""></div>
         </div>
 
         <div class="artist-card">
-          <div class="artist-photo"><img src="8.png"></div>
-          <div class="banner-overlay"><img src="8_FAACIA.png"></div>
+          <div class="artist-photo"><img src="8.png" alt=""></div>
+          <div class="banner-overlay"><img src="8_FAACIA.png" alt=""></div>
         </div>
 
         <div class="artist-card">
-          <div class="artist-photo"><img src="9.png"></div>
-          <div class="banner-overlay"><img src="9_KOIKOI.png"></div>
+          <div class="artist-photo"><img src="9.png" alt=""></div>
+          <div class="banner-overlay"><img src="9_KOIKOI.png" alt=""></div>
         </div>
 
         <div class="artist-card">
-          <div class="artist-photo"><img src="10.png"></div>
-          <div class="banner-overlay"><img src="10_UMI HOSHI.png"></div>
+          <div class="artist-photo"><img src="10.png" alt=""></div>
+          <div class="banner-overlay"><img src="10_UMI HOSHI.png" alt=""></div>
         </div>
 
       </div>
